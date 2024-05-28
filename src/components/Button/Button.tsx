@@ -17,11 +17,18 @@ type ButtonProps = {
 }
 
 export const Button = ({ buttonType="submit", children, className, onClick }: ButtonProps) => {
+  function _onClick(e: React.MouseEvent<HTMLButtonElement>) {
+    e.preventDefault();
+    
+    if (onClick) {
+      onClick();
+    }
+  }
   const _className = clsx(
     "font-bold py-2 px-4 rounded",
     buttonClasses[buttonType],
     className
   );
 
-  return <button className={_className} onClick={onClick}>{children}</button>;
+  return <button className={_className} onClick={_onClick}>{children}</button>;
 }

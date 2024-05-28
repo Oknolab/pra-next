@@ -11,7 +11,7 @@ type TextFieldProps = {
 
 export const TextField = ({label, placeholder, className, name="", onChange, value=""}: TextFieldProps) => {
   const _className = clsx(
-    'flex items-center space-x-2',
+    'grid grid-cols-3 gap-2 items-center',
     className
   );
 
@@ -25,12 +25,12 @@ export const TextField = ({label, placeholder, className, name="", onChange, val
 
   return (
     <label className={_className}>
-      <span>{label}</span>
+      <span className="text-right">{label}</span>
       <input
         name={name}
         type="text"
         placeholder={placeholder}
-        className="border border-gray-300 rounded px-2 py-1"
+        className="border border-gray-300 rounded px-2 py-1 col-span-2 w-full"
         value={value}
         onChange={_onChange}
       />
