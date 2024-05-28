@@ -1,3 +1,5 @@
+"use client";
+
 import { TextField, Button } from "@/components";
 import clsx from "clsx";
 import { useState } from "react";
