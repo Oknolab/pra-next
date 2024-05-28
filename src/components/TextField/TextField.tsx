@@ -9,7 +9,7 @@ type TextFieldProps = {
   className?: string;
 }
 
-const TextField = ({label, placeholder, className, name="", onChange, value=""}: TextFieldProps) => {
+export const TextField = ({label, placeholder, className, name="", onChange, value=""}: TextFieldProps) => {
   const _className = clsx(
     'flex items-center space-x-2',
     className
@@ -37,5 +37,3 @@ const TextField = ({label, placeholder, className, name="", onChange, value=""}:
     </label>
   )
 }
-
-export default TextField;

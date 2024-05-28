@@ -16,7 +16,7 @@ type ButtonProps = {
   onClick?: () => void;
 }
 
-const Button = ({ buttonType="submit", children, className, onClick }: ButtonProps) => {
+export const Button = ({ buttonType="submit", children, className, onClick }: ButtonProps) => {
   const _className = clsx(
     "font-bold py-2 px-4 rounded",
     buttonClasses[buttonType],
@@ -25,5 +25,3 @@ const Button = ({ buttonType="submit", children, className, onClick }: ButtonPro
 
   return <button className={_className} onClick={onClick}>{children}</button>;
 }
-
-export default Button;

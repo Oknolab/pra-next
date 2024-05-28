@@ -6,7 +6,7 @@ type UserListItemProps = {
   className?: string;
 }
 
-const UserListItem = ({user, className}: UserListItemProps) => {
+export const UserListItem = ({user, className}: UserListItemProps) => {
   const _className = clsx(
     'grid grid-cols-4 gap-2 border rounded-sm p-2',
     className
@@ -20,5 +20,3 @@ const UserListItem = ({user, className}: UserListItemProps) => {
     </li>
   );
 }
-
-export default UserListItem;
