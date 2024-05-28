@@ -14,9 +14,10 @@ type ButtonProps = {
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  disabled?: boolean;
 }
 
-export const Button = ({ buttonType="submit", children, className, onClick }: ButtonProps) => {
+export const Button = ({ buttonType="submit", children, className, onClick, disabled=false }: ButtonProps) => {
   function _onClick(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     
@@ -27,8 +28,11 @@ export const Button = ({ buttonType="submit", children, className, onClick }: Bu
   const _className = clsx(
     "font-bold py-2 px-4 rounded",
     buttonClasses[buttonType],
+    {
+      "opacity-50 pointer-events-none": disabled,
+    },
     className
   );
 
-  return <button className={_className} onClick={_onClick}>{children}</button>;
+  return <button className={_className} onClick={_onClick} disabled={disabled}>{children}</button>;
 }

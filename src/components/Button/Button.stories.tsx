@@ -44,3 +44,10 @@ export const SayHello: Story = {
     onClick: () => alert('Hello!'),
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    children: '無効',
+    disabled: true,
+  },
+};
