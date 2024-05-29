@@ -1,3 +1,8 @@
+/*
+  LookAtMe: Typescriptの設定ファイルである
+  Typescript関連でハマった時にネットで調べると、「tsconfig.jsonを変更しろ」と言われることが多い。
+*/
+
 {
   "compilerOptions": {
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -18,6 +23,7 @@
       }
     ],
     "paths": {
+      //LookAtMe: このようにimportエイリアスを設定することで、import文が短くなる
       "@/*": ["./src/*"]
     }
   },

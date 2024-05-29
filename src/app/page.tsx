@@ -1,3 +1,8 @@
+/*
+  LookAtMe: ユーザを作成するページである
+  components/で定義したコンポーネントを集めて、一つのページを作成する
+*/
+
 "use client";
 
 import {

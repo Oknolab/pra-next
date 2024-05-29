@@ -1,7 +1,14 @@
+/*
+  LookAtMe: ButtonコンポーネントをStorybookで表示するためのファイルである
+*/
+
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {Button} from './Button';
 
+/*
+  この辺はおまじないである
+*/
 const meta = {
   title: 'Button',
   component: Button,
@@ -15,6 +22,9 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+/*
+  LookAtMe: ここで一つのカタログを定義している
+*/
 export const Create: Story = {
   args: {
     children: '作成',

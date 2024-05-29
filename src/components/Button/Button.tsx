@@ -9,6 +9,9 @@ const buttonClasses = {
   danger: "bg-red-500 hover:bg-red-700 text-white",
 }
 
+/*
+  LookAtMe: ここでPropsを定義している
+*/
 type ButtonProps = {
   buttonType?: ButtonType;
   children?: React.ReactNode;
