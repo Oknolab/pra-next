@@ -3,6 +3,7 @@
 import { TextField, Button } from "@/components";
 import clsx from "clsx";
 import { useState } from "react";
+import { createUser } from "@/query/createUser";
 
 type CreateUserFormProps = {
   className?: string;
@@ -54,11 +55,13 @@ interface ICreateUserFormController {
   handleSubmit: () => void;
 }
 
+const initialState: State = {
+  userName: "",
+  age: "",
+};
+
 function useCreateUserForm(): ICreateUserFormController {
-  const [state, setState] = useState<State>({
-    userName: "",
-    age: "",
-  });
+  const [state, setState] = useState<State>(initialState);
 
   function handleChange(name: string, value: string) {    
     setState(prev => {
@@ -75,7 +78,13 @@ function useCreateUserForm(): ICreateUserFormController {
     }
 
     // TODO: API call
-    console.log(state);
+    createUser(state.userName, Number(state.age))
+      .then(res => {
+        setState(initialState);
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
   
   function _validation() {
